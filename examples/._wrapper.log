@@ -1,0 +1,362 @@
+2025-03-05 07:45:44,543 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 07:45:44,544 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: Configuration file not found
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 46, in load_configuration
+    config_file = find_config_file(config_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 20, in find_config_file
+    raise FileNotFoundError(f"Configuration file not found at specified path: {path}")
+FileNotFoundError: Configuration file not found at specified path: config_model.yml
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 64, in __init__
+    self.config = load_configuration(config_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 51, in load_configuration
+    raise FileNotFoundError("Configuration file not found") from e
+FileNotFoundError: Configuration file not found
+2025-03-05 08:02:37,041 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 08:02:37,042 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: Configuration file not found
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 46, in load_configuration
+    config_file = find_config_file(config_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 20, in find_config_file
+    raise FileNotFoundError(f"Configuration file not found at specified path: {path}")
+FileNotFoundError: Configuration file not found at specified path: config_model.yml
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 64, in __init__
+    self.config = load_configuration(config_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 51, in load_configuration
+    raise FileNotFoundError("Configuration file not found") from e
+FileNotFoundError: Configuration file not found
+2025-03-05 08:33:04,784 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 08:33:04,785 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: name 'kwargs' is not defined
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 64, in __init__
+    self.config = self._load_config(config_path, **kwargs)
+                                                   ^^^^^^
+NameError: name 'kwargs' is not defined
+2025-03-05 08:35:44,102 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 08:35:44,103 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 08:35:58,177 - ShallowSAWrapper - ERROR - Error in setup_components: 'parameterization'
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 100, in setup_components
+    self.param_manager = ParameterManager(self.config)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\optimizers\parameterManager.py", line 24, in __init__
+    self.activation_flags = config["parameterization"]["activation_flags"]
+                            ~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'parameterization'
+2025-03-05 08:35:58,181 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: 'parameterization'
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 66, in __init__
+    self.setup_components()
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 47, in wrapper
+    result = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 100, in setup_components
+    self.param_manager = ParameterManager(self.config)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\optimizers\parameterManager.py", line 24, in __init__
+    self.activation_flags = config["parameterization"]["activation_flags"]
+                            ~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'parameterization'
+2025-03-05 08:38:31,084 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 08:38:31,085 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: name 'yaml' is not defined
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 64, in __init__
+    self.config = self._load_config(config_path, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 213, in _load_config
+    file_config = yaml.safe_load(f)
+                  ^^^^
+NameError: name 'yaml' is not defined
+2025-03-05 08:41:37,585 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 08:41:37,589 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 08:41:37,590 - ShallowSAWrapper - ERROR - Error in setup_components: Unsupported backend: JAX
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 80, in setup_components
+    self.design   = Design(
+                    ^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_base.py", line 8, in __init__
+    self.response        = DesignResponse(model_option = model_option, wvl = wvl, backend = backend)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_response.py", line 26, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\loader.py", line 18, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\spectral.py", line 33, in __init__
+    self.wvl = convert_array(self.wvl, self.backend)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\backend.py", line 101, in convert_array
+    raise ValueError(f"Unsupported backend: {backend}")
+ValueError: Unsupported backend: JAX
+2025-03-05 08:41:37,594 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: Unsupported backend: JAX
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 66, in __init__
+    self.setup_components()
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 47, in wrapper
+    result = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 80, in setup_components
+    self.design   = Design(
+                    ^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_base.py", line 8, in __init__
+    self.response        = DesignResponse(model_option = model_option, wvl = wvl, backend = backend)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_response.py", line 26, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\loader.py", line 18, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\spectral.py", line 33, in __init__
+    self.wvl = convert_array(self.wvl, self.backend)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\backend.py", line 101, in convert_array
+    raise ValueError(f"Unsupported backend: {backend}")
+ValueError: Unsupported backend: JAX
+2025-03-05 08:59:33,912 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 08:59:33,918 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 08:59:33,920 - ShallowSAWrapper - ERROR - Error in setup_components: Unsupported backend: JAX
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 80, in setup_components
+    self.design   = Design(
+                    ^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_base.py", line 8, in __init__
+    self.response        = DesignResponse(model_option = model_option, wvl = wvl, backend = backend)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_response.py", line 26, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\loader.py", line 18, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\spectral.py", line 33, in __init__
+    self.wvl = convert_array(self.wvl, self.backend)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\backend.py", line 101, in convert_array
+    raise ValueError(f"Unsupported backend: {backend}")
+ValueError: Unsupported backend: JAX
+2025-03-05 08:59:33,923 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: Unsupported backend: JAX
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 66, in __init__
+    self.setup_components()
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 47, in wrapper
+    result = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 80, in setup_components
+    self.design   = Design(
+                    ^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_base.py", line 8, in __init__
+    self.response        = DesignResponse(model_option = model_option, wvl = wvl, backend = backend)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_response.py", line 26, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\loader.py", line 18, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\spectral.py", line 33, in __init__
+    self.wvl = convert_array(self.wvl, self.backend)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\backend.py", line 101, in convert_array
+    raise ValueError(f"Unsupported backend: {backend}")
+ValueError: Unsupported backend: JAX
+2025-03-05 09:02:03,049 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 09:02:03,055 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 09:02:03,057 - ShallowSAWrapper - ERROR - Error in setup_components: Unsupported backend: JAX
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 80, in setup_components
+    self.design   = Design(
+                    ^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_base.py", line 8, in __init__
+    self.response        = DesignResponse(model_option = model_option, wvl = wvl, backend = backend)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_response.py", line 26, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\loader.py", line 18, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\spectral.py", line 33, in __init__
+    self.wvl = convert_array(self.wvl, self.backend)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\backend.py", line 101, in convert_array
+    raise ValueError(f"Unsupported backend: {backend}")
+ValueError: Unsupported backend: JAX
+2025-03-05 09:02:03,060 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: Unsupported backend: JAX
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 66, in __init__
+    self.setup_components()
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 47, in wrapper
+    result = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 80, in setup_components
+    self.design   = Design(
+                    ^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_base.py", line 8, in __init__
+    self.response        = DesignResponse(model_option = model_option, wvl = wvl, backend = backend)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\design\design_response.py", line 26, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\loader.py", line 18, in __init__
+    super().__init__(**data)
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\model\common\spectral.py", line 33, in __init__
+    self.wvl = convert_array(self.wvl, self.backend)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\backend.py", line 101, in convert_array
+    raise ValueError(f"Unsupported backend: {backend}")
+ValueError: Unsupported backend: JAX
+2025-03-05 09:08:27,340 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 09:08:27,344 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 09:08:32,074 - ShallowSAWrapper - ERROR - Error in setup_components: Configuration file not found
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 46, in load_configuration
+    config_file = find_config_file(config_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 20, in find_config_file
+    raise FileNotFoundError(f"Configuration file not found at specified path: {path}")
+FileNotFoundError: Configuration file not found at specified path: config_model.yml
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 100, in setup_components
+    self.eta           = self.param_manager.reduce_model(self.radiometry.sampled_reflectance)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\optimizers\parameterManager.py", line 247, in reduce_model
+    config             = load_configuration('config_model.yml')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 51, in load_configuration
+    raise FileNotFoundError("Configuration file not found") from e
+FileNotFoundError: Configuration file not found
+2025-03-05 09:08:32,077 - ShallowSAWrapper - ERROR - Failed to initialize ShallowSAWrapper: Configuration file not found
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 46, in load_configuration
+    config_file = find_config_file(config_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 20, in find_config_file
+    raise FileNotFoundError(f"Configuration file not found at specified path: {path}")
+FileNotFoundError: Configuration file not found at specified path: config_model.yml
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 65, in __init__
+    self.setup_components()
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 47, in wrapper
+    result = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 100, in setup_components
+    self.eta           = self.param_manager.reduce_model(self.radiometry.sampled_reflectance)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\optimizers\parameterManager.py", line 247, in reduce_model
+    config             = load_configuration('config_model.yml')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\config\configLoader.py", line 51, in load_configuration
+    raise FileNotFoundError("Configuration file not found") from e
+FileNotFoundError: Configuration file not found
+2025-03-05 09:12:39,565 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 09:12:39,570 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 09:12:44,312 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 09:12:44,313 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 09:12:58,774 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 09:12:59,468 - ShallowSAWrapper - ERROR - Error in generate_sample: the 'package' argument is required to perform a relative import for '..lk_inference.backend.jax.homoscedastic_jax'
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 137, in generate_sample
+    samples = self.mvg_inference.generate_samples(n_samples, **params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\homoscedastic_model.py", line 110, in generate_samples
+    return self.get_function("generate_samples")(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\homoscedastic_model.py", line 72, in get_function
+    FUNCTION_HOMOSCEDASTIC_REGISTRY = get_functions_registry(self.backend)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\models_registry\homoscedastic_registry.py", line 23, in get_functions_registry
+    homo_var_module  = get_homo_var_module(backend)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\models_registry\homoscedastic_registry.py", line 8, in get_homo_var_module
+    return  importlib.import_module(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 84, in import_module
+    raise TypeError("the 'package' argument is required to perform a "
+TypeError: the 'package' argument is required to perform a relative import for '..lk_inference.backend.jax.homoscedastic_jax'
+2025-03-05 19:13:39,994 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:13:40,011 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:13:45,715 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:13:45,715 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:13:45,725 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:13:46,519 - ShallowSAWrapper - ERROR - Error in generate_sample: the 'package' argument is required to perform a relative import for '..backend.jax.homoscedastic_jax'
+Traceback (most recent call last):
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\wrappers\run_inference.py", line 137, in generate_sample
+    samples = self.mvg_inference.generate_samples(n_samples, **params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\homoscedastic_model.py", line 110, in generate_samples
+    return self.get_function("generate_samples")(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\homoscedastic_model.py", line 72, in get_function
+    FUNCTION_HOMOSCEDASTIC_REGISTRY = get_functions_registry(self.backend)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\models_registry\homoscedastic_registry.py", line 23, in get_functions_registry
+    homo_var_module  = get_homo_var_module(backend)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\medalix\Desktop\Phd_Dev\sasha.v.0.0.1\src\sasha\lk_inference\models_registry\homoscedastic_registry.py", line 8, in get_homo_var_module
+    return  importlib.import_module(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 84, in import_module
+    raise TypeError("the 'package' argument is required to perform a "
+TypeError: the 'package' argument is required to perform a relative import for '..backend.jax.homoscedastic_jax'
+2025-03-05 19:15:24,767 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:15:24,772 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:15:29,535 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:15:29,536 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:16:16,054 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:16:16,060 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:16:16,704 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:16:16,705 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:16:21,098 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:16:21,754 - ShallowSAWrapper - INFO - Profiling parameter: tsm
+2025-03-05 19:16:59,156 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:16:59,168 - ShallowSAWrapper - INFO - Profiling parameter: z
+2025-03-05 19:17:38,071 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:17:38,079 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:17:38,761 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:17:38,762 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:17:38,763 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:17:38,773 - ShallowSAWrapper - INFO - Profiling parameter: z
+2025-03-05 19:18:09,135 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:18:09,142 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:18:09,800 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:18:09,801 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:18:09,802 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:18:09,813 - ShallowSAWrapper - INFO - Profiling parameter: z
+2025-03-05 19:18:54,193 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:18:54,198 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:18:54,843 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:18:54,844 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:18:54,846 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:18:54,854 - ShallowSAWrapper - INFO - Profiling parameter: z
+2025-03-05 19:35:02,369 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:35:02,375 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:35:03,339 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:35:03,341 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:35:03,342 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:35:03,358 - ShallowSAWrapper - INFO - Profiling parameter: z
+2025-03-05 19:35:37,279 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:35:37,285 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:35:38,117 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:35:38,118 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:35:38,120 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:35:38,134 - ShallowSAWrapper - INFO - Profiling parameter: z
+2025-03-05 19:36:16,413 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 19:36:16,419 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 19:36:17,192 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 19:36:17,194 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 19:36:17,196 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 19:36:17,209 - ShallowSAWrapper - INFO - Profiling parameter: z
+2025-03-05 21:18:57,049 - ShallowSAWrapper - INFO - Initializing ShallowSAWrapper
+2025-03-05 21:18:57,057 - ShallowSAWrapper - INFO - Setting up components
+2025-03-05 21:18:58,141 - ShallowSAWrapper - INFO - Components setup completed successfully
+2025-03-05 21:18:58,147 - ShallowSAWrapper - INFO - ShallowSAWrapper initialized successfully
+2025-03-05 21:18:58,148 - ShallowSAWrapper - INFO - Generating 1 samples
+2025-03-05 21:18:58,165 - ShallowSAWrapper - INFO - Profiling parameter: z

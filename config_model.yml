@@ -1,0 +1,68 @@
+# config.yml
+
+
+
+backend: JAX  # NUMPY, TENSORFLOW, JAX, NUMBA
+
+
+design:
+  sensor:  sentinel_2A #   sentinel_2B, sentinel_2A, dirac,  hyspex_muosli
+  min_wvl: 400
+  max_wvl: 800
+  wvl_step:   1
+
+
+
+#   BATHYSAT 2020
+#   modelling_args:
+#   aphy_model_option:     "bricaud"
+#   acdom_model_option:    "bricaud"
+#   anap_model_option:     "bricaud"
+#   bb_chl_model_option:   "None"
+#   bb_cdom_model_option:  "None"
+#   bb_tsm_model_option:   "bricaud"
+#   bottom_model_option:   "linear"
+
+
+
+# PhD  2024
+modeling_args:
+    aphy_model_option:    "log_bricaud"
+    acdom_model_option:   "log_bricaud"
+    anap_model_option:    "log_bricaud"
+    bb_chl_model_option:  "None"
+    bb_cdom_model_option: "None"
+    bb_tsm_model_option:  "log_bricaud"
+    bottom_model_option:  "sigmoid"  #sigmoid/linear
+
+
+
+prop_type:              "rrsp"
+
+
+optimizer : 
+    method:             trust-constr #SLSQP # trust-constr, SLSQP etc..
+    bounded_opt:        True
+    initialization:     "Theta_True"
+    prop:               "rrsp"
+
+
+parameterization:
+    activation_flags:  {'chl': 1, 'cdom': 1, 'tsm': 1,  'z' : 1, 'alpha_m_1' : 1}
+
+
+profiler:
+  deviation:  6                      #coefficient to scale std (ofim or efim) and define the profiling interval
+
+
+simulation:
+    parameterization: TWBB           #Example, replace with actual parameterizations defined in src/config/simulated_conditions.py
+    psi_key: z
+    n_mc:       2
+    std_noise_log:  -3.5
+    verbose:   0
+
+
+paths:
+  param_file_path:   "src/config/param_space.json"
+  results_directory: "./results"

@@ -1,0 +1,14 @@
+numpy
+scipy
+pydantic
+matplotlib
+pyyaml
+colorlog
+jax
+jaxlib
+numba
+tensorflow
+streamlit
+intersect
+colour-science
+tqdm

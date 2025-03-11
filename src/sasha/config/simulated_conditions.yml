@@ -1,0 +1,34 @@
+# Units for each parameter
+UNITS :      {'chl': 'mg/m^3', 'cdom': 'm^-1', 'tsm': 'g/m^3', 'alpha_m_1': 'ratio'}
+# Clear waters with white bottom
+predefined : {
+    CWBB :   {'chl': 0.01, 'cdom': 0.001, 'tsm': 0.01, 'alpha_m_1': 0.2, 'label': 'Clear Waters with Bright Bedtype'},
+
+    # Clear waters with dark bottom
+    CWDB :  {'chl': 0.01, 'cdom': 0.001, 'tsm': 0.01, 'alpha_m_1': 0.8, 'label': 'Clear Waters with Dark Bedtype'},
+        
+    # Turbid waters with white bottom
+    TWBB :  {'chl': 0.05, 'cdom': 0.01, 'tsm': 3, 'alpha_m_1': 0.2, 'label': 'Turbid Waters with Bright Bedtype'},
+    
+    # Turbid waters with dark bottom
+    TWDB :  {'chl': 0.05, 'cdom': 0.01, 'tsm': 3, 'alpha_m_1': 0.8, 'label': 'Turbid Waters with Dark Bedtype'},
+    
+    # Green waters with sandy bottom
+    GWBB :  {'chl': 2.5, 'cdom': 0.01, 'tsm': 0.01, 'alpha_m_1': 0.2, 'label': 'Green Waters with Bright Bedtype'},
+    
+    # Green waters with sandy bottom
+    GWDB :  {'chl': 2.5, 'cdom': 0.01, 'tsm': 0.01, 'alpha_m_1': 0.8, 'label': 'Green Waters with Dark Bedtype'},
+
+    # Yellow waters with dark bottom
+    YWBB : {'chl': 0.05, 'cdom': .5, 'tsm': 0.01, 'alpha_m_1': 0.2, 'label': 'Yellow Waters with Bright Bedtype'},
+
+    # Yellow waters with dark bottom
+    YWDB :  {'chl': 0.05, 'cdom': .5, 'tsm': 0.01, 'alpha_m_1': 0.8, 'label': 'Yellow Waters with Dark Bedtype'},
+    
+    # Highly mixed waters with dark bottom
+    HMWDB : {'chl': 1, 'cdom': 1, 'tsm': 3, 'alpha_m_1': 0.9, 'label': 'Highly Mixed Waters with Bright Bedtype'},
+
+    # Low mixed waters with white bottom
+    LMWBB : {'chl': 0.1, 'cdom': 0.1, 'tsm': 0.2, 'alpha_m_1': 0.1, 'label': 'Low Mixed Waters with Dark Bedtype'},
+
+}

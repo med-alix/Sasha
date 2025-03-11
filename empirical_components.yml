@@ -1,0 +1,15 @@
+base_path: src/share/env_input
+water_components:
+  pure_water:
+    awater_file: awater.txt
+  phytoplankton:
+    # Bricaud 1995 model files
+    aphy_file: aphys2.txt
+    ephy_file: ephys2.txt
+    # Size fractionated phytoplankton model files
+    abs_micro_file: abs_spec_micro.txt
+    abs_nano_file: abs_spec_nano.txt
+
+bottom_components:
+  sand_albedo_file: sh_ref_mart.txt
+  vege_albedo_file: target_035.txt

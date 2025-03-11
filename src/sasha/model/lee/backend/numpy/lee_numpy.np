@@ -1,0 +1,94 @@
+def compute_rrsw(z, kc, rrs_dp):
+    z_reshaped = z.reshape(-1, 1)
+    rrsc = rrs_dp * (1. - np.exp(-kc * z_reshaped))
+    return rrsc
+
+def compute_rrsb(z, kb, albedo):
+    z_reshaped = z.reshape(-1, 1)
+    print(kb.shape, albedo.shape)
+    rrsb = (albedo / np.pi) * np.exp(-kb * z_reshaped)
+    return rrsb
+
+
+def compute_rrsm(z, kc, rrs_dp, kb, albedo):
+    rrsw  = compute_rrsw(z, kc, rrs_dp)
+    rrsb  = compute_rrsb(z, kb, albedo)
+    return rrsw + rrsb
+
+
+def compute_rrsp(z, kc, rrs_dp, kb, albedo, nconv, dconv):
+    rrsm  = compute_rrsm(z, kc, rrs_dp, kb, albedo)
+    rrsp = nconv * rrsm / (1.-dconv * rrsm)
+    return rrsp
+
+
+# @jit(nopython=True)
+def compute_rrsw_deriv(z, kc, rrs_dp, kc_jacob, rrs_dp_jacob):
+    z_reshaped =   z.reshape(-1, 1)  # reshape for broadcasting
+    term1      =   z_reshaped * rrs_dp * np.exp(-kc * z_reshaped)
+    term2      =   1 - np.exp(-kc * z_reshaped)
+    term_z     =   -kc * rrs_dp * np.exp(-kc * z_reshaped)  # derivative w.r.t z
+    # Using chain rule
+    rrsw_jacob_kc = term1[:,:,jnp.newaxis] * kc_jacob  # or np.dot(term1, kc_jacob)
+    rrsw_jacob_dp = term2[:,:,jnp.newaxis] * rrs_dp_jacob# or np.dot(term2, rrs_dp_jacob)
+    # Concatenating to form the full Jacobian [dRRS/dz, dRRS/dp_c, dRRS/dp_dp]
+    rrsw_jacob = np.concatenate([term_z[:,:,jnp.newaxis], rrsw_jacob_kc + rrsw_jacob_dp], axis=2)
+    return rrsw_jacob
+
+
+def compute_rrsb_deriv(z, kb, albedo,kb_jacob, albedo_deriv):
+    rrsb = compute_rrsb(z, kb, albedo)
+    if rrsb.ndim == 2 : 
+      n_samples, n_wvl = rrsb.shape
+    else  : 
+      n_samples, n_wvl = 1, rrsb.size
+
+    z_reshaped    = z.reshape(n_samples, 1)
+    kb_reshaped   = kb.reshape(n_samples, n_wvl, 1)
+    rrsb_reshaped = rrsb.reshape(n_samples, n_wvl, 1)
+    # Compute partial derivative with respect to z
+    d_rrsb_dz     = -kb_reshaped * rrsb_reshaped
+    # Use chain rule for partial derivative with respect to kb
+    d_rrsb_dkb_chain   = -z_reshaped * rrsb_reshaped
+    d_rrsb_d_params_kb = d_rrsb_dkb_chain * kb_jacob.reshape(n_samples, n_wvl, -1)
+    # Use chain rule for partial derivative with respect to Albedo
+    d_rrsb_d_params_albedo = (1 / np.pi * np.exp(-kb_reshaped * z_reshaped)) * albedo_deriv.reshape(n_samples, n_wvl, -1)
+    # Concatenating all to form the complete Jacobian
+    rrsb_jacob = np.concatenate([d_rrsb_dz, d_rrsb_d_params_kb, d_rrsb_d_params_albedo], axis=-1)
+    return rrsb_jacob
+
+
+def compute_rrsm_deriv(z, kc, rrs_dp, kc_jacob, rrs_dp_jacob,  kb, albedo, kb_jacob, albedo_deriv):
+    # Get the Jacobians for water and bottom components
+    rrsb = compute_rrsb(z, kb, albedo)
+    rrsw_jacob = compute_rrsw_deriv(z, kc, rrs_dp, kc_jacob, rrs_dp_jacob)
+    rrsb_jacob = compute_rrsb_deriv(z, kb, rrsb, kb_jacob, albedo_deriv)
+    # Summing along the z axis (axis=0) for the derivative w.r.t z
+    albed_dim  = 1 if albedo_deriv.ndim < 2 else albedo_deriv.shape[2]
+
+    rrsm_jacob_zw      = rrsw_jacob + rrsb_jacob[:, :, :-albed_dim]
+    # Concatenating along the rest of the parameters
+    rrsm_jacob_albedo  = rrsb_jacob[:, :, -albed_dim:]
+    # print(rrsm_jacob_params.shape)
+    # Concatenating the z-axis sum and the rest of the parameters to form the full Jacobian
+    rrsm_jacob = np.concatenate([rrsm_jacob_zw, rrsm_jacob_albedo], axis=2)
+    return rrsm_jacob
+
+
+def compute_rrsp_deriv(z, kc, rrs_dp, kc_jacob, rrs_dp_jacob,  kb, albedo, kb_jacob, albedo_deriv, nconv, dconv):
+    # Compute the Jacobian of rrsm with respect to all parameters
+    rrsm_jacob = compute_rrsm_deriv(z, kc, rrs_dp, kc_jacob, rrs_dp_jacob, kb, albedo, kb_jacob, albedo_deriv)
+    
+    # Compute rrsm
+    rrsm = compute_rrsm(z, kc, rrs_dp, kb, albedo)
+    rrsb = compute_rrsb(z, kb, albedo)
+    # Compute the derivative of rrsp with respect to rrsm
+    dr_rsp_drsm = nconv / ((1 - dconv * rrsm) ** 2)
+    
+    # Reshape dr_rsp_drsm to match the number of rows in rrsm_jacob
+    dr_rsp_drsm_reshaped = dr_rsp_drsm.reshape(-1, 1)
+    
+    # Compute the Jacobian of rrsp
+    rrsp_jacob = dr_rsp_drsm_reshaped * rrsm_jacob  # Element-wise multiplication
+    
+    return rrsp_jacob

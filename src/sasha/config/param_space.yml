@@ -1,0 +1,81 @@
+# src/shallow_sa/config/param_space.yml
+
+chl:
+  lower: 1.0e-6
+  initial: 1.0e-3
+  upper: 10.0
+
+chl_micro:
+  lower: 1.0e-4
+  initial: 1.0e-3
+  upper: 5.0
+
+chl_nano:
+  lower: 1.0e-4
+  initial: 1.0e-3
+  upper: 5.0
+
+tsm:
+  lower: 1.0e-6
+  initial: 1.0e-1
+  upper: 10.0
+
+cdom:
+  lower: 1.0e-6
+  initial: 1.0e-3
+  upper: 1.0e-1
+
+z:
+  lower: 1.0e-2
+  initial: 1.0
+  upper: 45.0
+
+alpha_m_1:
+  lower: 0.00001
+  initial: 0.5
+  upper: 0.99999
+
+a_1:
+  lower: 0.01
+  initial: 0.03498720996860133
+  upper: 0.1
+
+a_2:
+  lower: 0.1
+  initial: 0.342155440335681
+  upper: 1.0
+
+lambda_1:
+  lower: 400.0
+  initial: 442.2871694159062
+  upper: 500.0
+
+lambda_2:
+  lower: 900.0
+  initial: 1038.7033934619485
+  upper: 1100.0
+
+sigma_1:
+  lower: 20.0
+  initial: 55.44455553145052
+  upper: 200.0
+
+sigma_2:
+  lower: 50.0
+  initial: 147.97439804961323
+  upper: 200.0
+
+p:
+  lower: 0.5
+  initial: 0.6560867815061463
+  upper: 0.9
+
+k1:
+  lower: 0.1
+  initial: 0.2346079671431631
+  upper: 0.5
+
+d1:
+  lower: 600.0
+  initial: 688.1267296385715
+  upper: 800.0

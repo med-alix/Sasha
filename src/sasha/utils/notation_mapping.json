@@ -1,0 +1,114 @@
+{
+    "theta_tilde": {
+        "unicode": "ᵱ7˜",
+        "latex": "$\\boldsymbol{\\tilde\\theta}$",
+        "description": "True values of the parameters"
+    },
+    "y_bold": {
+        "unicode": "ᵂA",
+        "latex": "$\\textbf{y}$",
+        "description": "Observed data"
+    },
+    "theta_bold": {
+        "unicode": "ᵱ7",
+        "latex": "$\\boldsymbol{\\theta}$",
+        "description": "Parameters underlying the data"
+    },
+    "psi": {
+        "unicode": "\u03C8",
+        "latex": "$\\psi$",
+        "description": "Interest scalar parameter"
+    },
+    "omega_bold": {
+        "unicode": "ᵱ4ᵂD",
+        "latex": "$\\boldsymbol{\\omega}$",
+        "description": "Nuisance vector parameter"
+    },
+    "theta_hat": {
+        "unicode": "ᵱ7̂",
+        "latex": "$\\boldsymbol{\\hat\\theta}$",
+        "description": "Maximum Likelihood Estimates (MLE)"
+    },
+    "gamma": {
+        "unicode": "γ",
+        "latex": "$\\gamma$",
+        "description": "Semi-analytical empirical values from literature"
+    },
+    "v_s_bold": {
+        "unicode": "ᵃ1ₛ",
+        "latex": "$\\boldsymbol{v_s}$",
+        "description": "Interior orientation vector"
+    },
+    "l_p": {
+        "unicode":  "\u2113\u209A",
+        "latex": "$l_p$",
+        "description": "Profile log-likelihood"
+    },
+    "psi_tilde": {
+        "unicode": "\u03C8\u02DC",
+        "latex": "$\\tilde\\psi$",
+        "description": "True value of the interest parameter"
+    },
+    "psi_hat": {
+        "unicode": "\u03C8\u0302",
+        "latex": "$\\hat\\psi$",
+        "description": "MLE of interest parameter"
+    },
+    "chl": {
+        "unicode": "Chl",
+        "latex": "$\\text{Chl}$",
+        "description": "Concentrations of chlorophyll"
+    },
+    "cdom": {
+        "unicode": "CDOM",
+        "latex": "$\\text{CDOM}$",
+        "description": "Concentrations of colored dissolved organic matter"
+    },
+    "z": {
+        "unicode": "z",
+        "latex": "$z$",
+        "description": "Water Column Depth (WCD)"
+    },
+    "alpha_M": {
+        "unicode": "αₘ",
+        "latex": "$\\alpha_m$",
+        "description": "Mixing ratio between sand and vegetation reflectances"
+    },
+    "i_bold": {
+        "unicode": "l\u209A\u1D70",
+        "latex": "$\\boldsymbol{i}$",
+        "description": "Expected Fisher Information Matrix of θ at the MLE"
+    },
+    "j_bold": {
+        "unicode": "ᵪ5",
+        "latex": "$\\boldsymbol{j}$",
+        "description": "Observed Fisher Information Matrix of θ at the MLE"
+    },
+    
+    "s_t": {
+        "unicode": "s\u209C",
+        "latex": "$s_t$",
+        "description": "Statistical test"
+    },
+    "r": {
+        "unicode": "r",
+        "latex": "$r$",
+        "description": "Signed log-likelihood ratio statistic"
+    },
+    "s": {
+        "unicode": "s",
+        "latex": "$s$",
+        "description": "Score statistic"
+    },
+    "t_o": {
+        "unicode": "t\u2092",
+        "latex": "$t_o$",
+        "description": "Wald test statistic using Observed Information"
+    },
+    "t_e": {
+        "unicode": "t\u2091",
+        "latex": "$t_e$",
+        "description": "Wald test statistic using Expected Information"
+    }
+
+}
