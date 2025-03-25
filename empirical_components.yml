@@ -12,4 +12,4 @@ water_components:
 
 bottom_components:
   sand_albedo_file: sh_ref_mart.txt
-  vege_albedo_file: target_035.txt
+  vege_albedo_file: target_011.txt
